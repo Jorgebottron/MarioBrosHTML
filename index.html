@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo Javascript</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Qwitcher+Grypen:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+        <style>
+            /* Imagen de fondo */
+            body {
+                background-image: url('https://i.pinimg.com/originals/f1/0a/c2/f10ac2b9409072e3ffce337f718c62ff.jpg');
+                background-size: cover; /* Cubre toda la pantalla */
+                background-position: center; /* Centra la imagen */
+                background-repeat: no-repeat; /* Evita que se repita */
+                background-attachment: fixed; /* La imagen de fondo permanece fija al hacer scroll */
+            }
+
+            .titulo {
+                font-family: "Rubik Mono One", cursive;
+                font-size: 60px;
+                color:white;
+                /* Esto es para darle un controno oscuro al título */
+                text-shadow: 
+                -1px -1px 0 #000,  
+                 1px -1px 0 #000,  
+                -1px  1px 0 #000,  
+                 1px  1px 0 #000,
+                -2px -2px 0 #000,
+                 2px -2px 0 #000,
+                -2px  2px 0 #000,
+                 2px  2px 0 #000,
+                -3px -3px 0 #000,
+                 3px -3px 0 #000,
+                -3px  3px 0 #000,
+                 3px  3px 0 #000;
+            }
+
+
+            
+        </style>
+    </head>
+    <body>
+        <h2 class="titulo">Pagina Interativa con Botones de Mario Bros</h2>
+        <img src="https://pm1.aminoapps.com/6312/6bf26a87fa30f140bd5fe46771ab269dd3d7bac6_00.jpg" width="250px" id="imagen">
+
+        <!--Para el botón de Hongo Rojo-->
+        <button type="button" onclick="hongoRojo()">
+            <img src="https://i.pinimg.com/736x/95/ea/71/95ea711b946d2db6537405b6f37296cf.jpg" width="100px"></button>
+        <script>
+            function hongoRojo(){
+                var imagenMario = document.getElementById('imagen');
+                //Si Mario tiene la flor de fuego, se queda como está porque ese poder es mejor
+                if (imagenMario.src.includes("https://i.pinimg.com/originals/61/f4/b7/61f4b7ea34ef2320d97a9487f57ca7a7.png")){
+                    imagenMario.src = "https://i.pinimg.com/originals/61/f4/b7/61f4b7ea34ef2320d97a9487f57ca7a7.png";
+                //Si Mario es pequeño, lo hace grande
+                } else if(imagenMario.src.includes("https://pm1.aminoapps.com/6312/6bf26a87fa30f140bd5fe46771ab269dd3d7bac6_00.jpg")){
+                    imagenMario.src = "https://i.pinimg.com/474x/1c/ee/d0/1ceed098558380f5c4739bb878bd7bce.jpg";
+                //Si Mario tiene estrella, se vuelve grande
+                } else if(imagenMario.src.includes("https://static.wikia.nocookie.net/mario/images/6/67/Mario_Estrella.png/revision/latest?cb=20111105224340&path-prefix=es")){
+                    imagneMario.src = "https://i.pinimg.com/474x/1c/ee/d0/1ceed098558380f5c4739bb878bd7bce.jpg";
+                } else if(imagenMario.src.includes("https://static.wikia.nocookie.net/nintendo/images/8/8e/200px-Boo.png/revision/latest/scale-to-width/360?cb=20120409203052&path-prefix=es")){
+                    imagenMario.src = imagenMario.src;
+                }
+            }
+        </script>
+
+
+        <!--Para el boton de Goomba-->
+        <button type="button" onclick="Goomba()">
+            <img src="https://static.wikia.nocookie.net/mario/images/b/b0/Goomba_%28MPSS%29.png/revision/latest/scale-to-width-down/174?cb=20211226140521&path-prefix=es" width="85px">
+        </button>
+        <script>
+            function Goomba(){
+                var imagenMario = document.getElementById('imagen');
+                //Si Mario es grande, se vuelve pequeño
+                if (imagenMario.src.includes("https://i.pinimg.com/474x/1c/ee/d0/1ceed098558380f5c4739bb878bd7bce.jpg")){
+                    imagenMario.src = "https://pm1.aminoapps.com/6312/6bf26a87fa30f140bd5fe46771ab269dd3d7bac6_00.jpg";
+                //Si Mario es pequeño, muere
+                } else if(imagenMario.src.includes("https://pm1.aminoapps.com/6312/6bf26a87fa30f140bd5fe46771ab269dd3d7bac6_00.jpg")) {
+                    imagenMario.src = "https://static.wikia.nocookie.net/nintendo/images/8/8e/200px-Boo.png/revision/latest/scale-to-width/360?cb=20120409203052&path-prefix=es";
+                //Si Mario tiene flor de fuego, se vuelve grande
+                } else if(imagenMario.src.includes("https://i.pinimg.com/originals/61/f4/b7/61f4b7ea34ef2320d97a9487f57ca7a7.png")){
+                    imagenMario.src = "https://i.pinimg.com/474x/1c/ee/d0/1ceed098558380f5c4739bb878bd7bce.jpg";
+                //Si Mario tiene estrella, no pasa nada
+                } else if(imagenMario.src.include("https://static.wikia.nocookie.net/mario/images/6/67/Mario_Estrella.png/revision/latest?cb=20111105224340&path-prefix=es")){
+                    imagenMario.src = "https://static.wikia.nocookie.net/mario/images/6/67/Mario_Estrella.png/revision/latest?cb=20111105224340&path-prefix=es";
+                }
+            }
+        </script>
+
+        <!--Para la estrella-->
+        <button type="button" onclick="document.getElementById('imagen').src = 'https://static.wikia.nocookie.net/mario/images/6/67/Mario_Estrella.png/revision/latest?cb=20111105224340&path-prefix=es'">
+            <img src="https://i.pinimg.com/550x/af/d8/9f/afd89f3b31f2d54682b0e6372aa51dfb.jpg" width="100px"></button>
+
+        <!--Para la Flor de Fuego-->
+        <button type="button" onclick="document.getElementById('imagen').src = 'https://i.pinimg.com/originals/61/f4/b7/61f4b7ea34ef2320d97a9487f57ca7a7.png'">
+            <img src="https://static.wikia.nocookie.net/mario/images/d/d2/Flor_de_Fuego_NSMBUD.png/revision/latest?cb=20211230105926&path-prefix=es" width="100px"></button>
+
+        <!--Para el Hongo Verde-->
+        <button type="button" onclick="hongoVerde()">
+            <img src="https://static.wikia.nocookie.net/mario/images/5/53/Champi%C3%B1%C3%B3n_Vida_Extra_Artwork_New_Super_Mario_Bros..png/revision/latest?cb=20230923092928&path-prefix=es" width="100px"></button>
+        <script>
+            function hongoVerde(){
+                var imagenMario = document.getElementById('imagen');
+                //Si Mario está muerto, revive siendo pequeño
+                if (imagenMario.src.includes("https://static.wikia.nocookie.net/nintendo/images/8/8e/200px-Boo.png/revision/latest/scale-to-width/360?cb=20120409203052&path-prefix=es")){
+                    imagenMario.src = "https://pm1.aminoapps.com/6312/6bf26a87fa30f140bd5fe46771ab269dd3d7bac6_00.jpg";
+                //Sino, no pasa nada
+                } else {
+                    imagenMario.src = imagenMario.src;
+                }
+            }
+        </script>
+
+        
+
+        <p id="demo"></p>
+    </body> 
+</html>
